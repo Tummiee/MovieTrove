@@ -10,7 +10,10 @@ import { GoDotFill } from "react-icons/go";
 const Navbar = () => {
   return (
     <div className='navbar'>
-        <div className='logo'>Logo</div>
+        <div className='logo'>M<a><FaRegPlayCircle style={{color: '#990202', 
+                                                            position: 'relative',
+                                                            top: '.4vh'
+        }}/></a>VIETROVE</div>
         <div className='pageLinks'>
             <a><BiCameraMovie /></a>
             <a><FaRegPlayCircle style={{color: '#990202'}}/></a>
