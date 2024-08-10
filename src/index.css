@@ -10,6 +10,6 @@ body{
     min-height: 100vh;
     min-width: 100%;
     display: grid;
-    background-color: grey;
+    background-color: rgb(255, 244, 230);
     font-family: 'Poppins', sans-serif;
 }
