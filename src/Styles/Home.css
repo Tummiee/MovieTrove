@@ -1,76 +1,26 @@
-.big-poster{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 60vh;
-    color: white;
-}
-
-.big-poster .big-poster-img{
-    position: absolute;
-    width: 100%;
-    height: 60vh;
-    z-index: -1;
-}
-
-.big-poster .cast{
-    position: relative;
-    top: 40%;
-    display: flex;
-    flex-direction: column;
-}
-
-.big-poster .big-poster-bottom-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    top: 73.8%;
-    height: 8%;
-    background: hsla(0, 0%, 0%, .5) ;
-    padding: 0 1.5rem;
-}
-
-.big-poster .big-poster-bottom-bar .left{
-    display: flex;
-    gap: 1rem;
-    font-size: clamp(.8rem, 1.2vw, 2rem);
-}
-
-.big-poster .big-poster-bottom-bar .left .dateNRating p span{
- color: #ff0000;
-}
-
-.big-poster .big-poster-bottom-bar .right{
-    display: flex;
-    gap: 1rem;
-    font-size: clamp(.8rem, 1.2vw, 2rem);
-}
-
-.big-poster .big-poster-bottom-bar .right p span{
-    color: red;
-    margin-right: .4rem;
-}
-
 .lower-home-page{
     padding: 0 1.5rem;
     margin-top: 1rem;
+    width: 100vw;
 }
 
 .lower-home-page .mini-nav{
    display: flex;
    justify-content: space-between;
+   padding:0 20px;
    
 }
 
-.lower-home-page .mini-nav h3{
+.lower-home-page .mini-nav .logo{
     font-weight: 500;
-    font-size: clamp(.8rem, 1.4vw, 2rem);
+    font-size: clamp(.8rem, 1.2vw, 2rem);
+    display: flex;
 }
 
 .lower-home-page .mini-nav h4{
     font-weight: 400;
     font-size: clamp(.8rem, 1.2vw, 2rem);
+    text-align: center;
 }
 
 .lower-home-page .mini-nav h4 span{
@@ -78,22 +28,126 @@
 }
 
 .lower-home-page .mini-nav .search{
-
+    width: 15vw;
+    height: 3vh;
+    display: flex;
 }
 
 .lower-home-page .mini-nav .search input{
     outline: none;
     border: none;
     border-bottom: 1px solid rgb(187, 187, 187);
-    height: 2.5vh;
+    height: 3vh;
+    width: 100%;
     border-radius: 3px;
+    padding: 0 2vw;
+    color: rgb(77, 77, 77);
+}
+
+.lower-home-page .mini-nav .search input::placeholder{
+    color: grey;
 }
 
 .lower-home-page .mini-nav .search .btn{
     background: none;
     border: none;
-    position: absolute;
-    right: 2.5%;
-    top: 72.3%;
     color: rgb(63, 63, 63);
+    position: relative;
+    cursor: pointer;
+    right: 8%;
+    top: 10%;
+    
+}
+
+.movie-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.movie-cards .movie{
+    width: 300px;
+    margin: 1rem;
+    border-radius:3px ;
+    background-color: grey;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.movie-cards .movie img{
+    width: 100%;
+}
+
+.movie-info{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: black;
+    padding: 0.25rem;
+    border-radius: 3PX;
+    font-weight: bold;
+}
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+@media only screen and (max-width: 900px) {
+    .lower-home-page .mini-nav .search .btn{
+        right: 12%;
+        top: -10%;
+    }
+
+    .lower-home-page .mini-nav .search input{
+        height: 2vh;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .lower-home-page .mini-nav .search input{
+        width: 100%;
+    }
+
+    .lower-home-page .mini-nav h4{
+        font-size: clamp(.7rem, 1.2vw, 2rem);
+    }
+
+    .lower-home-page .mini-nav .search{
+        width: 20vw;
+    }
+
+    .lower-home-page .mini-nav .search .btn{
+        display: none;
+    }
+
+    .lower-home-page .mini-nav .search input::placeholder{
+        text-align: center;
+        font-size: clamp(.7rem, 1.2vw, 2rem);
+    }
+
 }

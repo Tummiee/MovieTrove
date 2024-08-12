@@ -1,58 +1,73 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import '../Styles/Home.css'
-import Badboys from '../assets/Badboys.jpg'
-import { GoDotFill } from "react-icons/go";
-import { FaRegHeart } from "react-icons/fa";
-import { MdOutlineFileDownload } from "react-icons/md";
-import { IoChatbubblesOutline } from "react-icons/io5";
-import StarRating from '../components/StarRating';
 import { IoIosSearch } from "react-icons/io";
+import fetchIMDBData from '../utils/api';
+import MovieCard from '../components/MovieCard';
+import { FaRegPlayCircle } from "react-icons/fa";
 
 const Home = () => {
 
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [query, setQuery] = useState('');
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+          const result = await fetchIMDBData(query);
+          setMovies(result);
+        } catch (error) {
+          console.error('Error:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const result = await fetchIMDBData('Games');
+            setMovies(result);
+          } catch (error) {
+            console.error('Error:', error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchData();
+      }, []);
+    
+      if (loading) return <p>Loading...</p>;
+    
 
     
   return (
     <div>
-        <div className='big-poster'>
-            <img className='big-poster-img' src={Badboys}/>
-            <div className='cast'>
-                <GoDotFill />
-                <p>Lead Actor</p>
-                <GoDotFill />
-                <GoDotFill />
-            </div>
-            <div className='big-poster-bottom-bar'>
-                <div className='left'>
-                    <div className='dateNRating'>
-                        <p>PUBLISHED<span>FEB 20, 2024</span></p>
-                    </div>
-                    <div className='dateNRating'>
-                        <p>UPDATED<span>FEB 20, 2024</span></p>
-                    </div>
-                    <div className='dateNRating'>
-                        <p style={{display: 'flex'}}>RATING
-                        <StarRating rating={4.5} />
-                        </p>
-                    </div>
-                </div>
-                <div className='right'>
-                        <p><span><FaRegHeart /></span>2,548</p>
-                        <p><span><IoChatbubblesOutline /></span>21</p>
-                        <p><span><MdOutlineFileDownload /></span>564</p>
-                </div>
-            </div>
-        </div>
 
         <div className="lower-home-page">
             <div className="mini-nav">
-                <h3>FEATURED MOVIES</h3>
-                <h4><i>New Released <span>/ Trailers & Clips</span></i></h4>
-                <form className='search'>
-                    <input type="text" placeholder='search'></input>
-                    <button type='button' className='btn'><IoIosSearch /></button>
+            <div className='logo'>M<FaRegPlayCircle style={{color: '#990202', 
+                                                            position: 'relative',
+                                                            top: '.2vh'
+            }}/>VIETROVE</div>
+                <h4><i>New Released <span>/ Seaerch Trailers & Clips 👉</span></i></h4>
+                <form className='search' onSubmit={handleSearch}>
+                    <input type="text" placeholder='search'
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    ></input>
+                    <button type='submit' className='btn'><IoIosSearch /></button>
                 </form>
             </div>
+        </div>
+
+        <div className="movie-cards">
+        {movies.map((movie, index) => (
+            <MovieCard key={index} movie={movie} />
+          ))}
+
         </div>
     </div>
   )
