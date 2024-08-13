@@ -44,9 +44,9 @@ const Home = () => {
 
     
   return (
-    <div>
+    <div className='home'>
 
-        <div className="lower-home-page">
+        <div className="whole-page">
             <div className="mini-nav">
             <div className='logo'>M<FaRegPlayCircle style={{color: '#990202', 
                                                             position: 'relative',

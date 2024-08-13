@@ -1,39 +1,46 @@
-.lower-home-page{
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.whole-page{
     padding: 0 1.5rem;
     margin-top: 1rem;
     width: 100vw;
 }
 
-.lower-home-page .mini-nav{
+.whole-page .mini-nav{
    display: flex;
    justify-content: space-between;
    padding:0 20px;
    
 }
 
-.lower-home-page .mini-nav .logo{
+.whole-page .mini-nav .logo{
     font-weight: 500;
     font-size: clamp(.8rem, 1.2vw, 2rem);
     display: flex;
 }
 
-.lower-home-page .mini-nav h4{
+.whole-page .mini-nav h4{
     font-weight: 400;
     font-size: clamp(.8rem, 1.2vw, 2rem);
     text-align: center;
 }
 
-.lower-home-page .mini-nav h4 span{
+.whole-page .mini-nav h4 span{
     color: gray;
 }
 
-.lower-home-page .mini-nav .search{
+.whole-page .mini-nav .search{
     width: 15vw;
     height: 3vh;
     display: flex;
 }
 
-.lower-home-page .mini-nav .search input{
+.whole-page .mini-nav .search input{
     outline: none;
     border: none;
     border-bottom: 1px solid rgb(187, 187, 187);
@@ -44,11 +51,11 @@
     color: rgb(77, 77, 77);
 }
 
-.lower-home-page .mini-nav .search input::placeholder{
+.whole-page .mini-nav .search input::placeholder{
     color: grey;
 }
 
-.lower-home-page .mini-nav .search .btn{
+.whole-page .mini-nav .search .btn{
     background: none;
     border: none;
     color: rgb(63, 63, 63);
@@ -62,7 +69,8 @@
 .movie-cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+
 
 }
 
@@ -118,34 +126,34 @@
 }
 
 @media only screen and (max-width: 900px) {
-    .lower-home-page .mini-nav .search .btn{
+    .whole-page .mini-nav .search .btn{
         right: 12%;
         top: -10%;
     }
 
-    .lower-home-page .mini-nav .search input{
+    .whole-page .mini-nav .search input{
         height: 2vh;
     }
 }
 
 @media only screen and (max-width: 640px) {
-    .lower-home-page .mini-nav .search input{
+    .whole-page .mini-nav .search input{
         width: 100%;
     }
 
-    .lower-home-page .mini-nav h4{
+    .whole-page .mini-nav h4{
         font-size: clamp(.7rem, 1.2vw, 2rem);
     }
 
-    .lower-home-page .mini-nav .search{
+    .whole-page .mini-nav .search{
         width: 20vw;
     }
 
-    .lower-home-page .mini-nav .search .btn{
+    .whole-page .mini-nav .search .btn{
         display: none;
     }
 
-    .lower-home-page .mini-nav .search input::placeholder{
+    .whole-page .mini-nav .search input::placeholder{
         text-align: center;
         font-size: clamp(.7rem, 1.2vw, 2rem);
     }
