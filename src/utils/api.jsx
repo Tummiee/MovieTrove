@@ -3,8 +3,8 @@ const fetchIMDBData = async (query) => {
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '64c56f0a0emsh9f60f64c86655c2p19b5a8jsnfa4387c23249',
-        'x-rapidapi-host': 'imdb8.p.rapidapi.com'
+        'x-rapidapi-key': import.meta.env.VITE_API_KEY,
+        'x-rapidapi-host': import.meta.env.VITE_API_HOST
       }
     };
   
