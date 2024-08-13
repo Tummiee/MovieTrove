@@ -39,7 +39,11 @@ const Home = () => {
         fetchData();
       }, []);
     
-      if (loading) return <p>Loading...</p>;
+      if (loading) return <p style={{display: 'flex',
+                                     justifyContent: 'center',
+                                     alignItems: 'center',
+                                     color: '#9c2d25'
+      }}>Loading...</p>;
     
 
     
