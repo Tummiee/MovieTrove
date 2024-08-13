@@ -15,6 +15,7 @@
    display: flex;
    justify-content: space-between;
    padding:0 20px;
+   align-items: center;
    
 }
 
@@ -38,6 +39,7 @@
     width: 15vw;
     height: 3vh;
     display: flex;
+    align-items: center;
 }
 
 .whole-page .mini-nav .search input{
@@ -128,7 +130,6 @@
 @media only screen and (max-width: 900px) {
     .whole-page .mini-nav .search .btn{
         right: 12%;
-        top: -10%;
     }
 
     .whole-page .mini-nav .search input{
