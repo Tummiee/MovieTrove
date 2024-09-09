@@ -56,7 +56,7 @@ const Home = () => {
                                                             position: 'relative',
                                                             top: '.2vh'
             }}/>VIETROVE</div>
-                <h4><i>New Released <span>/ Seaerch Trailers & Clips 👉</span></i></h4>
+                <h4><i>New Released <span>/ Search Trailers & Clips 👉</span></i></h4>
                 <form className='search' onSubmit={handleSearch}>
                     <input type="text" placeholder='search'
                     value={query}
